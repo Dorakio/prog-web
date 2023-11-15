@@ -1,0 +1,19 @@
+var num = 1;
+var matriz = Array.from({ length: 3 }, () => Array.from({ length: 4 }).fill(num++));
+console.log(matriz);
+
+function transposta(matriz) {
+    const linha = matriz.length, coluna = matriz[0].length;
+    const grid = [];
+    for (let j = 0; j < coluna; j++) {
+      grid[j] = Array(linha);
+    }
+    for (let i = 0; i < linha; i++) {
+      for (let j = 0; j < coluna; j++) {
+        grid[j][i] = matriz[i][j];
+      }
+    }
+    return grid;
+}
+
+console.log(transposta(matriz));
